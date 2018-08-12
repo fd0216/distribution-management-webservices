@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Customers">
+    <Key>
+      <PropertyRef Name="GUID" />
+    </Key>
+    <Property Name="GUID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LoginID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Passport" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ContactInfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="WeChat" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Statue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Employees">
+    <Key>
+      <PropertyRef Name="GUID" />
+    </Key>
+    <Property Name="GUID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EmployeeID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IDNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ContactInfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="WareHouseID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Statue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Trucks">
+    <Key>
+      <PropertyRef Name="GUID" />
+    </Key>
+    <Property Name="GUID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="License" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Position" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LoadCapacity" Type="Single" Nullable="false" />
+    <Property Name="TruckInfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LoadVolume" Type="Single" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WareHouses">
+    <Key>
+      <PropertyRef Name="GUID" />
+    </Key>
+    <Property Name="GUID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ContactInfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Statue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Wares">
+    <Key>
+      <PropertyRef Name="GUID" />
+    </Key>
+    <Property Name="GUID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="WareTypeID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Single" Nullable="false" />
+    <Property Name="Weight" Type="Single" Nullable="false" />
+    <Property Name="Volume" Type="Single" Nullable="false" />
+    <Property Name="Piece" Type="Single" Nullable="false" />
+    <Property Name="TotalNum" Type="Single" Nullable="false" />
+    <Property Name="NumPerPiece" Type="Single" Nullable="false" />
+    <Property Name="TotalPrice" Type="Single" Nullable="false" />
+    <Property Name="OtherPrice" Type="Single" Nullable="false" />
+    <Property Name="ShipPrice" Type="Single" Nullable="false" />
+    <Property Name="SingleShipPrice" Type="Single" Nullable="false" />
+    <Property Name="Unit" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="InsuranceRatio" Type="Single" Nullable="false" />
+    <Property Name="CustomerLoginID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TruckLicense" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="WareHouseID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EmployeeID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Statue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="StorageTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DeliverTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="GenerateListTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PickupTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TaxFree" Type="Boolean" Nullable="false" />
+    <Property Name="InsurancePrice" Type="Single" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WareTypes">
+    <Key>
+      <PropertyRef Name="GUID" />
+    </Key>
+    <Property Name="GUID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ShipPrice" Type="Single" Nullable="false" />
+    <Property Name="Unit" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="InsuranceRatio" Type="Single" Nullable="false" />
+    <Property Name="CustomerGUID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="LMSEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Customers" EntityType="Self.Customers" />
+    <EntitySet Name="Employees" EntityType="Self.Employees" />
+    <EntitySet Name="Trucks" EntityType="Self.Trucks" />
+    <EntitySet Name="WareHouses" EntityType="Self.WareHouses" />
+    <EntitySet Name="Wares" EntityType="Self.Wares" />
+    <EntitySet Name="WareTypes" EntityType="Self.WareTypes" />
+  </EntityContainer>
+</Schema>

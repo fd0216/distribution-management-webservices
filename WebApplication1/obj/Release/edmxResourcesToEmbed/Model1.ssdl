@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Customers">
+    <Key>
+      <PropertyRef Name="GUID" />
+    </Key>
+    <Property Name="GUID" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="LoginID" Type="nvarchar(max)" />
+    <Property Name="Password" Type="nvarchar(max)" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Passport" Type="nvarchar(max)" />
+    <Property Name="ContactInfo" Type="nvarchar(max)" />
+    <Property Name="Email" Type="nvarchar(max)" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="Photo" Type="varbinary(max)" />
+    <Property Name="WeChat" Type="nvarchar(max)" />
+    <Property Name="Statue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Employees">
+    <Key>
+      <PropertyRef Name="GUID" />
+    </Key>
+    <Property Name="GUID" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="EmployeeID" Type="nvarchar(max)" />
+    <Property Name="Password" Type="nvarchar(max)" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="IDNumber" Type="nvarchar(max)" />
+    <Property Name="ContactInfo" Type="nvarchar(max)" />
+    <Property Name="Photo" Type="varbinary(max)" />
+    <Property Name="WareHouseID" Type="nvarchar(max)" />
+    <Property Name="Statue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Trucks">
+    <Key>
+      <PropertyRef Name="GUID" />
+    </Key>
+    <Property Name="GUID" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="License" Type="nvarchar(max)" />
+    <Property Name="Position" Type="nvarchar(max)" />
+    <Property Name="LoadCapacity" Type="real" Nullable="false" />
+    <Property Name="TruckInfo" Type="nvarchar(max)" />
+    <Property Name="LoadVolume" Type="real" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WareHouses">
+    <Key>
+      <PropertyRef Name="GUID" />
+    </Key>
+    <Property Name="GUID" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="ContactInfo" Type="nvarchar(max)" />
+    <Property Name="Statue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Wares">
+    <Key>
+      <PropertyRef Name="GUID" />
+    </Key>
+    <Property Name="GUID" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="WareTypeID" Type="nvarchar(max)" />
+    <Property Name="Price" Type="real" Nullable="false" />
+    <Property Name="Weight" Type="real" Nullable="false" />
+    <Property Name="Volume" Type="real" Nullable="false" />
+    <Property Name="Piece" Type="real" Nullable="false" />
+    <Property Name="TotalNum" Type="real" Nullable="false" />
+    <Property Name="NumPerPiece" Type="real" Nullable="false" />
+    <Property Name="TotalPrice" Type="real" Nullable="false" />
+    <Property Name="OtherPrice" Type="real" Nullable="false" />
+    <Property Name="ShipPrice" Type="real" Nullable="false" />
+    <Property Name="SingleShipPrice" Type="real" Nullable="false" />
+    <Property Name="Unit" Type="nvarchar(max)" />
+    <Property Name="Photo" Type="varbinary(max)" />
+    <Property Name="InsuranceRatio" Type="real" Nullable="false" />
+    <Property Name="CustomerLoginID" Type="nvarchar(max)" />
+    <Property Name="TruckLicense" Type="nvarchar(max)" />
+    <Property Name="WareHouseID" Type="nvarchar(max)" />
+    <Property Name="EmployeeID" Type="nvarchar(max)" />
+    <Property Name="Statue" Type="nvarchar(max)" />
+    <Property Name="StorageTime" Type="datetime" Nullable="false" />
+    <Property Name="DeliverTime" Type="datetime" Nullable="false" />
+    <Property Name="GenerateListTime" Type="datetime" Nullable="false" />
+    <Property Name="PickupTime" Type="datetime" Nullable="false" />
+    <Property Name="TaxFree" Type="bit" Nullable="false" />
+    <Property Name="InsurancePrice" Type="real" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WareTypes">
+    <Key>
+      <PropertyRef Name="GUID" />
+    </Key>
+    <Property Name="GUID" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="ShipPrice" Type="real" Nullable="false" />
+    <Property Name="Unit" Type="nvarchar(max)" />
+    <Property Name="InsuranceRatio" Type="real" Nullable="false" />
+    <Property Name="CustomerGUID" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityContainer Name="LMSModelStoreContainer">
+    <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Trucks" EntityType="Self.Trucks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WareHouses" EntityType="Self.WareHouses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Wares" EntityType="Self.Wares" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WareTypes" EntityType="Self.WareTypes" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

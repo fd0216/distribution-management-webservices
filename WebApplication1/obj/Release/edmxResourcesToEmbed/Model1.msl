@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LMSModelStoreContainer" CdmEntityContainer="LMSEntities">
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="LMSModel.Customers">
+        <MappingFragment StoreEntitySet="Customers">
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+          <ScalarProperty Name="LoginID" ColumnName="LoginID" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Passport" ColumnName="Passport" />
+          <ScalarProperty Name="ContactInfo" ColumnName="ContactInfo" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="WeChat" ColumnName="WeChat" />
+          <ScalarProperty Name="Statue" ColumnName="Statue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="LMSModel.Employees">
+        <MappingFragment StoreEntitySet="Employees">
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IDNumber" ColumnName="IDNumber" />
+          <ScalarProperty Name="ContactInfo" ColumnName="ContactInfo" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="WareHouseID" ColumnName="WareHouseID" />
+          <ScalarProperty Name="Statue" ColumnName="Statue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Trucks">
+      <EntityTypeMapping TypeName="LMSModel.Trucks">
+        <MappingFragment StoreEntitySet="Trucks">
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+          <ScalarProperty Name="License" ColumnName="License" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="LoadCapacity" ColumnName="LoadCapacity" />
+          <ScalarProperty Name="TruckInfo" ColumnName="TruckInfo" />
+          <ScalarProperty Name="LoadVolume" ColumnName="LoadVolume" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WareHouses">
+      <EntityTypeMapping TypeName="LMSModel.WareHouses">
+        <MappingFragment StoreEntitySet="WareHouses">
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="ContactInfo" ColumnName="ContactInfo" />
+          <ScalarProperty Name="Statue" ColumnName="Statue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Wares">
+      <EntityTypeMapping TypeName="LMSModel.Wares">
+        <MappingFragment StoreEntitySet="Wares">
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="WareTypeID" ColumnName="WareTypeID" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="Volume" ColumnName="Volume" />
+          <ScalarProperty Name="Piece" ColumnName="Piece" />
+          <ScalarProperty Name="TotalNum" ColumnName="TotalNum" />
+          <ScalarProperty Name="NumPerPiece" ColumnName="NumPerPiece" />
+          <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+          <ScalarProperty Name="OtherPrice" ColumnName="OtherPrice" />
+          <ScalarProperty Name="ShipPrice" ColumnName="ShipPrice" />
+          <ScalarProperty Name="SingleShipPrice" ColumnName="SingleShipPrice" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="InsuranceRatio" ColumnName="InsuranceRatio" />
+          <ScalarProperty Name="CustomerLoginID" ColumnName="CustomerLoginID" />
+          <ScalarProperty Name="TruckLicense" ColumnName="TruckLicense" />
+          <ScalarProperty Name="WareHouseID" ColumnName="WareHouseID" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="Statue" ColumnName="Statue" />
+          <ScalarProperty Name="StorageTime" ColumnName="StorageTime" />
+          <ScalarProperty Name="DeliverTime" ColumnName="DeliverTime" />
+          <ScalarProperty Name="GenerateListTime" ColumnName="GenerateListTime" />
+          <ScalarProperty Name="PickupTime" ColumnName="PickupTime" />
+          <ScalarProperty Name="TaxFree" ColumnName="TaxFree" />
+          <ScalarProperty Name="InsurancePrice" ColumnName="InsurancePrice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WareTypes">
+      <EntityTypeMapping TypeName="LMSModel.WareTypes">
+        <MappingFragment StoreEntitySet="WareTypes">
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ShipPrice" ColumnName="ShipPrice" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="InsuranceRatio" ColumnName="InsuranceRatio" />
+          <ScalarProperty Name="CustomerGUID" ColumnName="CustomerGUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

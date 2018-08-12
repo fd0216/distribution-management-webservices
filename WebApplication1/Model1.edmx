@@ -1,0 +1,346 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="LMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Customers">
+          <Key>
+            <PropertyRef Name="GUID" />
+          </Key>
+          <Property Name="GUID" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="LoginID" Type="nvarchar(max)" />
+          <Property Name="Password" Type="nvarchar(max)" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="Passport" Type="nvarchar(max)" />
+          <Property Name="ContactInfo" Type="nvarchar(max)" />
+          <Property Name="Email" Type="nvarchar(max)" />
+          <Property Name="Address" Type="nvarchar(max)" />
+          <Property Name="Photo" Type="varbinary(max)" />
+          <Property Name="WeChat" Type="nvarchar(max)" />
+          <Property Name="Statue" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Employees">
+          <Key>
+            <PropertyRef Name="GUID" />
+          </Key>
+          <Property Name="GUID" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="EmployeeID" Type="nvarchar(max)" />
+          <Property Name="Password" Type="nvarchar(max)" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="IDNumber" Type="nvarchar(max)" />
+          <Property Name="ContactInfo" Type="nvarchar(max)" />
+          <Property Name="Photo" Type="varbinary(max)" />
+          <Property Name="WareHouseID" Type="nvarchar(max)" />
+          <Property Name="Statue" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Trucks">
+          <Key>
+            <PropertyRef Name="GUID" />
+          </Key>
+          <Property Name="GUID" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="License" Type="nvarchar(max)" />
+          <Property Name="Position" Type="nvarchar(max)" />
+          <Property Name="LoadCapacity" Type="real" Nullable="false" />
+          <Property Name="TruckInfo" Type="nvarchar(max)" />
+          <Property Name="LoadVolume" Type="real" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WareHouses">
+          <Key>
+            <PropertyRef Name="GUID" />
+          </Key>
+          <Property Name="GUID" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="Address" Type="nvarchar(max)" />
+          <Property Name="ContactInfo" Type="nvarchar(max)" />
+          <Property Name="Statue" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Wares">
+          <Key>
+            <PropertyRef Name="GUID" />
+          </Key>
+          <Property Name="GUID" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="WareTypeID" Type="nvarchar(max)" />
+          <Property Name="Price" Type="real" Nullable="false" />
+          <Property Name="Weight" Type="real" Nullable="false" />
+          <Property Name="Volume" Type="real" Nullable="false" />
+          <Property Name="Piece" Type="real" Nullable="false" />
+          <Property Name="TotalNum" Type="real" Nullable="false" />
+          <Property Name="NumPerPiece" Type="real" Nullable="false" />
+          <Property Name="TotalPrice" Type="real" Nullable="false" />
+          <Property Name="OtherPrice" Type="real" Nullable="false" />
+          <Property Name="ShipPrice" Type="real" Nullable="false" />
+          <Property Name="SingleShipPrice" Type="real" Nullable="false" />
+          <Property Name="Unit" Type="nvarchar(max)" />
+          <Property Name="Photo" Type="varbinary(max)" />
+          <Property Name="InsuranceRatio" Type="real" Nullable="false" />
+          <Property Name="CustomerLoginID" Type="nvarchar(max)" />
+          <Property Name="TruckLicense" Type="nvarchar(max)" />
+          <Property Name="WareHouseID" Type="nvarchar(max)" />
+          <Property Name="EmployeeID" Type="nvarchar(max)" />
+          <Property Name="Statue" Type="nvarchar(max)" />
+          <Property Name="StorageTime" Type="datetime" Nullable="false" />
+          <Property Name="DeliverTime" Type="datetime" Nullable="false" />
+          <Property Name="GenerateListTime" Type="datetime" Nullable="false" />
+          <Property Name="PickupTime" Type="datetime" Nullable="false" />
+          <Property Name="TaxFree" Type="bit" Nullable="false" />
+          <Property Name="InsurancePrice" Type="real" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WareTypes">
+          <Key>
+            <PropertyRef Name="GUID" />
+          </Key>
+          <Property Name="GUID" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="ShipPrice" Type="real" Nullable="false" />
+          <Property Name="Unit" Type="nvarchar(max)" />
+          <Property Name="InsuranceRatio" Type="real" Nullable="false" />
+          <Property Name="CustomerGUID" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityContainer Name="LMSModelStoreContainer">
+          <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Trucks" EntityType="Self.Trucks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WareHouses" EntityType="Self.WareHouses" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Wares" EntityType="Self.Wares" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WareTypes" EntityType="Self.WareTypes" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Customers">
+          <Key>
+            <PropertyRef Name="GUID" />
+          </Key>
+          <Property Name="GUID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LoginID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Passport" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ContactInfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="WeChat" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Statue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Employees">
+          <Key>
+            <PropertyRef Name="GUID" />
+          </Key>
+          <Property Name="GUID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EmployeeID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IDNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ContactInfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="WareHouseID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Statue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Trucks">
+          <Key>
+            <PropertyRef Name="GUID" />
+          </Key>
+          <Property Name="GUID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="License" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Position" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LoadCapacity" Type="Single" Nullable="false" />
+          <Property Name="TruckInfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LoadVolume" Type="Single" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WareHouses">
+          <Key>
+            <PropertyRef Name="GUID" />
+          </Key>
+          <Property Name="GUID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ContactInfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Statue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Wares">
+          <Key>
+            <PropertyRef Name="GUID" />
+          </Key>
+          <Property Name="GUID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="WareTypeID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Single" Nullable="false" />
+          <Property Name="Weight" Type="Single" Nullable="false" />
+          <Property Name="Volume" Type="Single" Nullable="false" />
+          <Property Name="Piece" Type="Single" Nullable="false" />
+          <Property Name="TotalNum" Type="Single" Nullable="false" />
+          <Property Name="NumPerPiece" Type="Single" Nullable="false" />
+          <Property Name="TotalPrice" Type="Single" Nullable="false" />
+          <Property Name="OtherPrice" Type="Single" Nullable="false" />
+          <Property Name="ShipPrice" Type="Single" Nullable="false" />
+          <Property Name="SingleShipPrice" Type="Single" Nullable="false" />
+          <Property Name="Unit" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="InsuranceRatio" Type="Single" Nullable="false" />
+          <Property Name="CustomerLoginID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TruckLicense" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="WareHouseID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeeID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Statue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="StorageTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DeliverTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="GenerateListTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="PickupTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TaxFree" Type="Boolean" Nullable="false" />
+          <Property Name="InsurancePrice" Type="Single" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WareTypes">
+          <Key>
+            <PropertyRef Name="GUID" />
+          </Key>
+          <Property Name="GUID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ShipPrice" Type="Single" Nullable="false" />
+          <Property Name="Unit" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="InsuranceRatio" Type="Single" Nullable="false" />
+          <Property Name="CustomerGUID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="LMSEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Customers" EntityType="Self.Customers" />
+          <EntitySet Name="Employees" EntityType="Self.Employees" />
+          <EntitySet Name="Trucks" EntityType="Self.Trucks" />
+          <EntitySet Name="WareHouses" EntityType="Self.WareHouses" />
+          <EntitySet Name="Wares" EntityType="Self.Wares" />
+          <EntitySet Name="WareTypes" EntityType="Self.WareTypes" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LMSModelStoreContainer" CdmEntityContainer="LMSEntities">
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="LMSModel.Customers">
+              <MappingFragment StoreEntitySet="Customers">
+                <ScalarProperty Name="GUID" ColumnName="GUID" />
+                <ScalarProperty Name="LoginID" ColumnName="LoginID" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Passport" ColumnName="Passport" />
+                <ScalarProperty Name="ContactInfo" ColumnName="ContactInfo" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="WeChat" ColumnName="WeChat" />
+                <ScalarProperty Name="Statue" ColumnName="Statue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="LMSModel.Employees">
+              <MappingFragment StoreEntitySet="Employees">
+                <ScalarProperty Name="GUID" ColumnName="GUID" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="IDNumber" ColumnName="IDNumber" />
+                <ScalarProperty Name="ContactInfo" ColumnName="ContactInfo" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="WareHouseID" ColumnName="WareHouseID" />
+                <ScalarProperty Name="Statue" ColumnName="Statue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Trucks">
+            <EntityTypeMapping TypeName="LMSModel.Trucks">
+              <MappingFragment StoreEntitySet="Trucks">
+                <ScalarProperty Name="GUID" ColumnName="GUID" />
+                <ScalarProperty Name="License" ColumnName="License" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="LoadCapacity" ColumnName="LoadCapacity" />
+                <ScalarProperty Name="TruckInfo" ColumnName="TruckInfo" />
+                <ScalarProperty Name="LoadVolume" ColumnName="LoadVolume" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WareHouses">
+            <EntityTypeMapping TypeName="LMSModel.WareHouses">
+              <MappingFragment StoreEntitySet="WareHouses">
+                <ScalarProperty Name="GUID" ColumnName="GUID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="ContactInfo" ColumnName="ContactInfo" />
+                <ScalarProperty Name="Statue" ColumnName="Statue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Wares">
+            <EntityTypeMapping TypeName="LMSModel.Wares">
+              <MappingFragment StoreEntitySet="Wares">
+                <ScalarProperty Name="GUID" ColumnName="GUID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="WareTypeID" ColumnName="WareTypeID" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="Volume" ColumnName="Volume" />
+                <ScalarProperty Name="Piece" ColumnName="Piece" />
+                <ScalarProperty Name="TotalNum" ColumnName="TotalNum" />
+                <ScalarProperty Name="NumPerPiece" ColumnName="NumPerPiece" />
+                <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+                <ScalarProperty Name="OtherPrice" ColumnName="OtherPrice" />
+                <ScalarProperty Name="ShipPrice" ColumnName="ShipPrice" />
+                <ScalarProperty Name="SingleShipPrice" ColumnName="SingleShipPrice" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="InsuranceRatio" ColumnName="InsuranceRatio" />
+                <ScalarProperty Name="CustomerLoginID" ColumnName="CustomerLoginID" />
+                <ScalarProperty Name="TruckLicense" ColumnName="TruckLicense" />
+                <ScalarProperty Name="WareHouseID" ColumnName="WareHouseID" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="Statue" ColumnName="Statue" />
+                <ScalarProperty Name="StorageTime" ColumnName="StorageTime" />
+                <ScalarProperty Name="DeliverTime" ColumnName="DeliverTime" />
+                <ScalarProperty Name="GenerateListTime" ColumnName="GenerateListTime" />
+                <ScalarProperty Name="PickupTime" ColumnName="PickupTime" />
+                <ScalarProperty Name="TaxFree" ColumnName="TaxFree" />
+                <ScalarProperty Name="InsurancePrice" ColumnName="InsurancePrice" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WareTypes">
+            <EntityTypeMapping TypeName="LMSModel.WareTypes">
+              <MappingFragment StoreEntitySet="WareTypes">
+                <ScalarProperty Name="GUID" ColumnName="GUID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ShipPrice" ColumnName="ShipPrice" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="InsuranceRatio" ColumnName="InsuranceRatio" />
+                <ScalarProperty Name="CustomerGUID" ColumnName="CustomerGUID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
